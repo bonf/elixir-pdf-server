@@ -5,7 +5,13 @@ defmodule PdfServer.Umbrella.MixProject do
     [
       apps_path: "apps",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      releases: [
+        foo: [
+          version: "0.0.1",
+          applications: [pdf_server: :permanent, pdf_server_web: :permanent]
+        ]
+      ]
     ]
   end
 
